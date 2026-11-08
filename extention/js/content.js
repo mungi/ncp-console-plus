@@ -989,7 +989,7 @@
     titleOverrides = titleOverrides.filter((t) => now - t < TITLE_OVERRIDE_WINDOW_MS);
     if (titleOverrides.length >= TITLE_MAX_OVERRIDES) {
       if (!titleFightLogged) {
-        console.warn('[ncloud-ext] 다른 확장이 탭 제목을 계속 바꾸고 있어 제목 변경을 잠시 멈춥니다 (NCP Tab Renamer 등 비활성화 권장)');
+        console.warn('[ncloud-ext] 다른 확장이 탭 제목을 계속 바꾸고 있어 제목 변경을 잠시 멈춥니다 (다른 탭 이름 변경 확장 프로그램을 끄는 것을 권장합니다)');
         titleFightLogged = true;
       }
       return;
