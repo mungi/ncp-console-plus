@@ -112,8 +112,7 @@ code {
   padding: 8px 14px; border-radius: 8px 8px 0 0; font-size: 13px; white-space: nowrap; color: var(--muted);
 }
 .tab.active { background: var(--surface); color: var(--text); border: 1px solid var(--line); border-bottom-color: var(--surface); margin-bottom: -1px; }
-.fav { width: 14px; height: 14px; border-radius: 50%; flex: none; background: radial-gradient(circle at 50% 50%, #fff 0 22%, var(--brand) 24% 100%); }
-.fav.alt { background: radial-gradient(circle at 50% 50%, #fff 0 22%, #1565c0 24% 100%); }
+.fav-img { width: 16px; height: 16px; flex: none; }
 .mock-body { padding: 22px; display: grid; gap: 14px; }
 .mock-time { font-weight: 700; font-size: 15px; }
 .mock-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
@@ -143,6 +142,9 @@ h3 { font-size: 19px; margin: 0 0 6px; }
 .card .ico svg { width: 24px; height: 24px; }
 .card p { margin: 0; color: var(--muted); font-size: 15px; }
 .card ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+.card .flag-list { list-style: none; padding: 0; margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 13px; }
+.flag-list li { display: flex; align-items: center; gap: 6px; margin: 0; }
+.flag-list img { width: 20px; height: 20px; }
 
 .steps { counter-reset: step; list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
 .steps li { counter-increment: step; display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; }

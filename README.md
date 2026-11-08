@@ -66,4 +66,4 @@ Naver Cloud Console의 **서버 접속 콘솔(VNC)** 을 전체 화면으로 보
 
 [MIT License](LICENSE) © 2026 Mungi
 
-MIT 라이선스는 이 저장소의 코드에만 적용됩니다. NAVER, Ncloud, NAVER Cloud Platform은 각 권리자의 상표이며, 이 프로젝트는 NAVER Cloud와 무관한 비공식 프로젝트입니다.
+MIT 라이선스는 이 저장소의 코드에만 적용됩니다. `site/assets/flags/`의 리전(국기) 아이콘은 네이버 클라우드 콘솔의 이미지로, MIT 라이선스 대상이 아닙니다. NAVER, Ncloud, NAVER Cloud Platform은 각 권리자의 상표이며, 이 프로젝트는 NAVER Cloud와 무관한 비공식 프로젝트입니다.
