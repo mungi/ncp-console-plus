@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NCP Console Plus - 네이버 클라우드 콘솔 확장 프로그램</title>
+  <meta name="description" content="네이버 클라우드 콘솔 탭에 서비스명과 리전 아이콘을 표시하고, 서버 접속 콘솔의 전체화면과 자동 연장을 제공하는 Chrome 확장 프로그램입니다. 개인정보를 수집하지 않습니다.">
+  <meta property="og:title" content="NCP Console Plus">
+  <meta property="og:description" content="네이버 클라우드 콘솔 탭 이름·리전 아이콘, 서버 접속 콘솔 전체화면과 자동 연장.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/icon-128.png">
+  <meta name="theme-color" content="#00873c">
+  <link rel="icon" type="image/png" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/icon-128.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+
+  <!-- 아이콘 (확장 프로그램이 콘솔에 넣는 버튼과 같은 모양) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-screen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></g></symbol>
+    <symbol id="i-window" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 8h18"/><path d="M9 17l6-6"/><path d="M11 11h4v4"/></g></symbol>
+    <symbol id="i-bell-fill" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></g></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></g></symbol>
+    <symbol id="i-tab" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></symbol>
+    <symbol id="i-toggle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="2.5"/></g></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/icon-48.png" alt="" width="28" height="28"><span>NCP Console Plus</span></a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#features">기능</a>
+        <a href="#install">설치</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="support.html">지원</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <h1>네이버 클라우드 콘솔을<br><span class="accent">더 편하게</span></h1>
+        <p class="lead">탭 이름에 서비스명과 리전 아이콘을 보여 주고, 서버 접속 콘솔은 전체화면으로 보며 접속 시간은 자동으로 연장합니다.</p>
+        <div class="cta">
+          <a class="btn primary" href="#install">설치 방법</a>
+          <a class="btn" data-gh="repo" href="https://github.com/mungi/ncp-console-plus" rel="noopener">GitHub에서 보기</a>
+        </div>
+        <p class="note">Chrome(및 Edge 등 Chromium 계열) 브라우저용 · 개인정보를 수집하지 않습니다 · 비공식 확장 프로그램</p>
+
+        <div class="mock" role="img" aria-label="확장 프로그램 적용 화면 예시: 탭 제목이 '메뉴명 - 서비스명'으로 표시되고, 서버 접속 콘솔 위에 전체화면 버튼, 자동연장 스위치, 종 아이콘이 추가됩니다.">
+          <div class="mock-tabs" aria-hidden="true">
+            <div class="tab"><span class="fav"></span><span>Server</span></div>
+            <div class="tab active"><span class="fav"></span><span>DB Server - CDB PostgreSQL</span></div>
+            <div class="tab"><span class="fav alt"></span><span>Target Group - Load Balancer</span></div>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-time">남은 접속 시간: 04:43(전체 연결 시간: 00:17)</div>
+            <div class="mock-row">
+              <span class="mock-btn"><svg><use href="#i-screen"/></svg></span>
+              <span class="mock-btn"><svg><use href="#i-window"/></svg></span>
+              <span class="mock-switch-label">자동연장 <span class="sw"></span></span>
+              <span class="mock-bell"><svg><use href="#i-bell-fill"/></svg></span>
+              <span class="mock-extend">연장</span>
+            </div>
+            <div class="mock-warn">⏱ 서버 접속 콘솔이 1:49 후 종료됩니다 (최대 20분)</div>
+          </div>
+          <p class="mock-cap">화면 구성을 설명하기 위한 예시 이미지입니다. 실제 콘솔 화면과 다를 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>주요 기능</h2>
+        <p class="sec-lead">콘솔을 쓰면서 불편했던 부분을 작은 기능으로 덜어 줍니다. 모든 기능은 켜고 끌 수 있습니다.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="card-head"><span class="ico"><svg><use href="#i-tab"/></svg></span><h3>탭 이름을 서비스명으로</h3></div>
+            <p>탭이 많아도 어느 화면인지 바로 구분됩니다.</p>
+            <ul>
+              <li>제목: <code>메뉴명 - 서비스명</code></li>
+              <li>선택한 리전 아이콘을 탭 아이콘 자리에 표시</li>
+              <li>긴 서비스명은 축약 (예: CDB PostgreSQL)</li>
+              <li>한 번 방문한 화면은 제목을 기억해 깜빡임 최소화</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-head"><span class="ico"><svg><use href="#i-screen"/></svg></span><h3>서버 접속 콘솔 전체화면</h3></div>
+            <p>작은 모달 창 대신 콘솔 화면을 크게 볼 수 있습니다. 버튼은 두 가지입니다.</p>
+            <ul>
+              <li><strong>모니터 전체화면</strong>: 화면 전체를 콘솔로 채움</li>
+              <li><strong>브라우저 창 전체화면</strong>: 탭과 주소창은 유지</li>
+              <li>전체화면 중에도 종료 버튼과 알림 표시</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-head"><span class="ico"><svg><use href="#i-clock"/></svg></span><h3>접속 시간 자동 연장</h3></div>
+            <p>5분 세션이 끝나기 전에 "연장"을 대신 눌러 줍니다. 전체 연결 시간 최대 20분은 콘솔 정책이라 늘릴 수 없습니다.</p>
+            <ul>
+              <li>백그라운드 탭에서도 실제 경과 시간 기준으로 동작</li>
+              <li>콘솔 위 스위치로 즉시 켜기/끄기</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-head"><span class="ico"><svg><use href="#i-bell"/></svg></span><h3>20분 종료 예고</h3></div>
+            <p>강제 종료 2분 전부터 남은 시간을 알려 줍니다. 마지막 1분에는 빨간색으로 바뀝니다. 종 아이콘으로 켜고 끌 수 있습니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-head"><span class="ico"><svg><use href="#i-toggle"/></svg></span><h3>기능별 켜고 끄기</h3></div>
+            <p>확장 아이콘을 누르면 "탭 이름 변경"과 "서버 접속 콘솔 추가 기능"을 각각 끌 수 있습니다. 끄면 콘솔 원래 모습으로 돌아갑니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-head"><span class="ico"><svg><use href="#i-lock"/></svg></span><h3>데이터 수집 없음</h3></div>
+            <p>외부 서버로 아무것도 보내지 않습니다. 설정값과 탭 제목 기록만 내 브라우저에 저장합니다. <a href="privacy.html">개인정보처리방침</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="where">
+      <div class="wrap two">
+        <div>
+          <h2>동작하는 곳</h2>
+          <p class="sec-lead" style="margin-bottom:12px">아래 주소의 네이버 클라우드 콘솔에서만 실행됩니다. (<code>https</code> 주소만 해당)</p>
+          <ul class="pill-list">
+            <li>민간 · *.ncloud.com</li>
+            <li>금융 · console.fin-ncloud.com</li>
+            <li>공공 · console.gov-ncloud.com</li>
+          </ul>
+        </div>
+        <div>
+          <h2>이런 분께</h2>
+          <ul>
+            <li>콘솔 탭을 여러 개 열어 두고 오가는 분</li>
+            <li>서버 접속 콘솔(VNC)을 자주 쓰는 분</li>
+            <li>5분마다 "연장"을 누르는 게 번거로운 분</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="install">
+      <div class="wrap narrow">
+        <h2>설치 방법</h2>
+        <p class="sec-lead">Chrome 웹 스토어 등록은 준비 중입니다. 그동안은 아래처럼 직접 설치할 수 있습니다.</p>
+        <ol class="steps">
+          <li><p><a data-gh="repo" href="https://github.com/mungi/ncp-console-plus" rel="noopener">GitHub 저장소</a>에서 <strong>Code → Download ZIP</strong>으로 내려받아 압축을 풉니다.</p></li>
+          <li><p>Chrome 주소창에 <code>chrome://extensions</code>를 입력하고, 오른쪽 위 <strong>개발자 모드</strong>를 켭니다.</p></li>
+          <li><p><strong>압축해제된 확장 프로그램을 로드합니다</strong>를 누르고, 압축을 푼 폴더 안의 <code>extention</code> 폴더(<code>manifest.json</code>이 있는 폴더)를 선택합니다.</p></li>
+          <li><p>이미 열려 있던 콘솔 탭은 새로고침합니다. 이제 탭 이름이 바뀌고, 서버 접속 콘솔을 열면 버튼이 나타납니다.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="soft" id="faq">
+      <div class="wrap narrow">
+        <h2>자주 묻는 질문</h2>
+        <p class="sec-lead">더 궁금한 점은 <a href="support.html">지원 페이지</a>를 확인해 주세요.</p>
+
+        <details>
+          <summary>전체 연결 시간 20분 제한을 늘릴 수 있나요?</summary>
+          <p>아니요. 20분은 네이버 클라우드 콘솔이 정한 한도입니다. 콘솔 화면의 타이머와 서버가 모두 이 한도를 적용하므로 이 확장으로 늘릴 수 없고, 자동 연장은 20분 안에서 5분 세션이 끊기지 않게만 해 줍니다.</p>
+        </details>
+        <details>
+          <summary>자동 연장을 써도 되나요? 보안 정책에 어긋나지 않을까요?</summary>
+          <p>자리를 비운 사이에도 콘솔 세션이 최대 20분까지 유지됩니다. 소속 조직의 보안 정책(유휴 세션 정책 등)을 확인하신 뒤 사용해 주세요. 콘솔 위 스위치나 확장 아이콘 팝업에서 언제든 끌 수 있습니다.</p>
+        </details>
+        <details>
+          <summary>전체화면 버튼이 보이지 않아요.</summary>
+          <ul>
+            <li>서버 목록에서 "서버 접속 콘솔" 창이 열려 있어야 합니다. 확장은 그 창의 "연장" 버튼 옆에 버튼을 넣습니다.</li>
+            <li>확장 아이콘을 눌러 "서버 접속 콘솔 추가 기능"이 켜져 있는지 확인해 주세요.</li>
+            <li>설치 직후라면 콘솔 탭을 새로고침해 주세요.</li>
+            <li>금융·공공 클라우드나 Neuro처럼 서버 접속 콘솔 주소가 다른 환경에서는 버튼이 나타나지 않을 수 있습니다. <a data-gh="issues" href="https://github.com/mungi/ncp-console-plus/issues" rel="noopener">이슈</a>로 알려 주세요.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>탭 이름이 처음에는 잠깐 다르게 보였다가 바뀌어요.</summary>
+          <p>콘솔이 서비스명 정보를 페이지 끝부분에서 늦게 보내 주기 때문에, 처음 방문하는 화면에서는 콘솔 기본 제목이 잠깐 보였다가 한 번 바뀔 수 있습니다. 한 번 방문한 화면은 제목을 기억해 두었다가 바로 표시합니다.</p>
+        </details>
+        <details>
+          <summary>다른 "탭 이름 변경" 확장 프로그램과 같이 써도 되나요?</summary>
+          <p>서로 제목을 덮어쓰기 때문에 함께 쓰지 않는 것을 권합니다. 이 확장은 다른 확장이 제목을 계속 바꾸면 잠시 제목 변경을 멈춥니다.</p>
+        </details>
+        <details>
+          <summary>개인정보나 콘솔 내용을 수집하나요?</summary>
+          <p>아니요. 외부 서버로 데이터를 보내지 않고 분석·추적 도구도 없습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.</p>
+        </details>
+        <details>
+          <summary>네이버 클라우드(NAVER Cloud)에서 만든 공식 확장 프로그램인가요?</summary>
+          <p>아닙니다. 개인이 만든 비공식 확장 프로그램이며 NAVER Cloud와 제휴·후원 관계가 없습니다. <a href="terms.html">이용 안내</a>를 확인해 주세요.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="links">
+        <a href="./">소개</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용 안내·면책</a>
+        <a href="support.html">지원</a>
+        <a data-gh="repo" href="https://github.com/mungi/ncp-console-plus" rel="noopener">GitHub</a>
+      </div>
+      <p>NCP Console Plus는 비공식 확장 프로그램이며 NAVER Cloud Corp.와 제휴·후원·보증 관계가 없습니다.</p>
+      <p>NAVER, Ncloud, NAVER Cloud Platform은 각 권리자의 상표입니다.</p>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

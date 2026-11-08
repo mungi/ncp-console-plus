@@ -1,0 +1,42 @@
+Chrome 웹 스토어 등록 정보 (한국어)
+대시보드 각 칸에 붙여 넣으세요. 설명 칸은 ▼ ▲ 사이만 복사합니다.
+
+[이름]
+NCP Console Plus
+
+[요약]
+네이버 클라우드 콘솔 탭에 서비스명과 리전 아이콘을 표시하고, 서버 접속 콘솔 전체화면과 자동 연장을 지원합니다.
+
+[카테고리 / 언어]
+개발자 도구 / 한국어
+
+[자세한 설명]
+▼
+네이버 클라우드 플랫폼(NCP) 콘솔을 더 편하게 쓰도록 돕는 확장 프로그램입니다.
+
+■ 탭 이름을 서비스명으로
+- 탭 제목을 "메뉴명 - 서비스명"으로 표시 (예: Monitoring - CDB PostgreSQL)
+- 선택한 리전 아이콘을 탭 아이콘으로 표시
+
+■ 서버 접속 콘솔 추가 기능
+- 전체화면 버튼 (모니터 / 브라우저 창)
+- 접속 시간 자동 연장 (최대 20분)
+- 강제 종료 2분 전 알림
+
+■ 지원 콘솔
+*.ncloud.com, console.fin-ncloud.com, console.gov-ncloud.com
+
+■ 개인정보
+개인정보와 콘솔 화면 내용을 수집하거나 외부로 전송하지 않습니다. 설정값과 탭 제목 기록만 내 브라우저에 저장합니다.
+
+■ 알아 두세요
+- 개인이 만든 비공식 확장 프로그램이며 NAVER Cloud와 무관합니다.
+- 20분 한도는 콘솔 정책이라 늘릴 수 없습니다. 자동 연장은 소속 조직의 보안 정책을 확인한 뒤 사용하세요.
+
+문의: https://github.com/mungi/ncp-console-plus/issues
+▲
+
+[링크]
+홈페이지: https://mungi.github.io/ncp-console-plus/
+지원: https://mungi.github.io/ncp-console-plus/support.html
+개인정보처리방침: https://mungi.github.io/ncp-console-plus/privacy.html

@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "NCP Console Plus",
+  "version": "0.1.0",
+  "description": "Naver Cloud Console: server console fullscreen, session auto-extend, and tab titles/region icons",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "NCP Console Plus"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.ncloud.com/*",
+        "https://console.fin-ncloud.com/*",
+        "https://console.gov-ncloud.com/*"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}

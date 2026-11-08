@@ -1,0 +1,192 @@
+/* NCP Console Plus - 소개 사이트 공통 스타일 (외부 폰트·CDN 없음) */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f4f7f5;
+  --surface: #ffffff;
+  --text: #1b1f1d;
+  --muted: #55605a;
+  --line: #dfe5e1;
+  --brand: #00873c;
+  --brand-strong: #006f31;
+  --brand-soft: #e4f5ea;
+  --on-brand: #ffffff;
+  --warn: #ffb300;
+  --on-warn: #1b1f1d;
+  --danger: #c62828;
+  --code-bg: #eef2ef;
+  --shadow: 0 1px 2px rgba(16, 24, 20, 0.06), 0 8px 24px rgba(16, 24, 20, 0.06);
+  --radius: 12px;
+  --font: 'Pretendard', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101412;
+    --bg-soft: #151a17;
+    --surface: #181e1a;
+    --text: #e8ece9;
+    --muted: #a3aea7;
+    --line: #2a332d;
+    --brand: #35c46f;
+    --brand-strong: #5ad78d;
+    --brand-soft: #14281c;
+    --on-brand: #06210f;
+    --code-bg: #1d2520;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--brand-strong); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  background: var(--code-bg);
+  padding: 0.1em 0.4em;
+  border-radius: 5px;
+  word-break: break-all;
+}
+
+.wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.narrow { max-width: 760px; }
+
+.skip {
+  position: absolute; left: -999px; top: 8px;
+  background: var(--brand); color: var(--on-brand); padding: 8px 14px; border-radius: 6px; z-index: 100;
+}
+.skip:focus { left: 12px; }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; }
+.brand img { width: 28px; height: 28px; border-radius: 6px; }
+.nav { display: flex; gap: 4px 18px; flex-wrap: wrap; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 15px; padding: 6px 2px; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--text); }
+.nav a[aria-current="page"] { font-weight: 700; }
+
+/* ---------- hero ---------- */
+.hero { padding: 64px 0 40px; background: linear-gradient(180deg, var(--brand-soft), transparent 70%); }
+.hero h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+.hero h1 .accent { color: var(--brand-strong); }
+.lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 10px; font-weight: 700; text-decoration: none;
+  border: 2px solid var(--brand); color: var(--brand-strong); background: transparent;
+}
+.btn.primary { background: var(--brand); color: var(--on-brand); }
+.btn.primary:hover { background: var(--brand-strong); }
+.btn:not(.primary):hover { background: var(--brand-soft); }
+.note { font-size: 14px; color: var(--muted); margin-top: 14px; }
+
+/* ---------- mock (화면 예시) ---------- */
+.mock {
+  margin-top: 40px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); box-shadow: var(--shadow); overflow: hidden;
+}
+.mock-tabs { display: flex; gap: 6px; padding: 10px 10px 0; background: var(--bg-soft); border-bottom: 1px solid var(--line); overflow: hidden; }
+.tab {
+  display: flex; align-items: center; gap: 8px; flex: 0 0 auto;
+  padding: 8px 14px; border-radius: 8px 8px 0 0; font-size: 13px; white-space: nowrap; color: var(--muted);
+}
+.tab.active { background: var(--surface); color: var(--text); border: 1px solid var(--line); border-bottom-color: var(--surface); margin-bottom: -1px; }
+.fav { width: 14px; height: 14px; border-radius: 50%; flex: none; background: radial-gradient(circle at 50% 50%, #fff 0 22%, var(--brand) 24% 100%); }
+.fav.alt { background: radial-gradient(circle at 50% 50%, #fff 0 22%, #1565c0 24% 100%); }
+.mock-body { padding: 22px; display: grid; gap: 14px; }
+.mock-time { font-weight: 700; font-size: 15px; }
+.mock-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.mock-btn { width: 32px; height: 32px; border-radius: 6px; background: var(--brand); color: var(--on-brand); display: inline-flex; align-items: center; justify-content: center; }
+.mock-btn svg { width: 18px; height: 18px; }
+.mock-switch-label { font-weight: 700; font-size: 14px; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 36px; height: 20px; border-radius: 10px; background: var(--brand); position: relative; display: inline-block; }
+.sw::after { content: ""; position: absolute; top: 2px; left: 18px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.3); }
+.mock-bell { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: var(--brand); }
+.mock-bell svg { width: 20px; height: 20px; }
+.mock-extend { padding: 6px 16px; border: 1px solid var(--line); border-radius: 6px; font-weight: 600; font-size: 14px; background: var(--surface); }
+.mock-warn { display: inline-flex; align-items: center; gap: 10px; background: var(--warn); color: var(--on-warn); font-weight: 700; font-size: 14px; padding: 10px 14px; border-radius: 8px; width: fit-content; max-width: 100%; }
+.mock-cap { margin: 0; padding: 12px 22px 16px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
+
+/* ---------- sections ---------- */
+section { padding: 56px 0; scroll-margin-top: 64px; }
+.doc h2 { scroll-margin-top: 76px; }
+section.soft { background: var(--bg-soft); }
+h2 { font-size: clamp(24px, 4vw, 32px); line-height: 1.3; margin: 0 0 10px; letter-spacing: -0.01em; }
+h3 { font-size: 19px; margin: 0 0 6px; }
+.sec-lead { color: var(--muted); margin: 0 0 32px; max-width: 640px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-head h3 { margin: 0; }
+.card .ico { color: var(--brand-strong); display: inline-flex; flex: none; }
+.card .ico svg { width: 24px; height: 24px; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+.card ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+
+.steps { counter-reset: step; list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; }
+.steps li::before { content: counter(step); width: 36px; height: 36px; border-radius: 50%; background: var(--brand); color: var(--on-brand); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.steps p { margin: 0; }
+
+.two { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.pill-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 12px 0 0; }
+.pill-list li { padding: 4px 12px; border-radius: 999px; background: var(--brand-soft); color: var(--brand-strong); font-size: 14px; font-weight: 600; }
+
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0 18px; margin-bottom: 10px; }
+summary { cursor: pointer; font-weight: 700; padding: 14px 0; list-style-position: outside; }
+details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+details p, details ul { margin: 0 0 14px; color: var(--muted); }
+
+/* ---------- 문서 페이지 (개인정보·이용약관·지원) ---------- */
+.doc { padding: 48px 0 72px; }
+.doc h1 { font-size: clamp(28px, 5vw, 38px); line-height: 1.25; margin: 0 0 8px; }
+.doc .meta { color: var(--muted); font-size: 14px; margin: 0 0 32px; }
+.doc h2 { font-size: 22px; margin: 40px 0 10px; padding-top: 8px; }
+.doc h3 { margin: 22px 0 6px; }
+.doc ul, .doc ol { padding-left: 22px; }
+.doc li { margin: 4px 0; }
+.callout { background: var(--brand-soft); border: 1px solid color-mix(in srgb, var(--brand) 35%, var(--line)); border-radius: 10px; padding: 14px 18px; margin: 18px 0; }
+.callout p { margin: 0; }
+.table-wrap { overflow-x: auto; margin: 14px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 520px; }
+th, td { text-align: left; border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
+th { background: var(--bg-soft); }
+.toc { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px; padding: 14px 20px; margin: 0 0 8px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.lang-en { margin-top: 56px; padding-top: 24px; border-top: 2px solid var(--line); }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14px; background: var(--bg-soft); }
+.site-footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 14px; }
+.site-footer a { color: var(--muted); }
+.site-footer p { margin: 0 0 6px; max-width: 760px; }
+
+@media (max-width: 560px) {
+  .hero { padding-top: 40px; }
+  section { padding: 40px 0; }
+  .mock-body { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

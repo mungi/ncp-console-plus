@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>개인정보처리방침 - NCP Console Plus</title>
+  <meta name="description" content="NCP Console Plus 개인정보처리방침. 이 확장 프로그램은 개인정보를 수집하거나 외부 서버로 전송하지 않습니다.">
+  <meta name="theme-color" content="#00873c">
+  <link rel="icon" type="image/png" href="assets/favicon-16.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/icon-48.png" alt="" width="28" height="28"><span>NCP Console Plus</span></a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="./#features">기능</a>
+        <a href="./#install">설치</a>
+        <a href="./#faq">FAQ</a>
+        <a href="privacy.html" aria-current="page">개인정보처리방침</a>
+        <a href="support.html">지원</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="doc">
+    <div class="wrap narrow">
+      <h1>개인정보처리방침</h1>
+      <p class="meta">NCP Console Plus · 시행일 2026-11-09 · <a href="#english">English version</a></p>
+
+      <div class="callout">
+        <p><strong>한 줄 요약:</strong> NCP Console Plus는 개인정보를 수집하지 않고, 어떤 데이터도 외부 서버로 전송하지 않으며, 광고·분석·추적 도구를 사용하지 않습니다. 설정값과 탭 제목 기록은 내 브라우저에만 저장됩니다.</p>
+      </div>
+
+      <nav class="toc" aria-label="목차">
+        <ol>
+          <li><a href="#s1">운영자와 적용 범위</a></li>
+          <li><a href="#s2">확장 프로그램이 저장하는 정보</a></li>
+          <li><a href="#s3">페이지에서 읽기만 하는 정보</a></li>
+          <li><a href="#s4">수집하지 않는 정보</a></li>
+          <li><a href="#s5">외부 전송과 제3자 제공</a></li>
+          <li><a href="#s6">요청하는 권한과 사용 목적</a></li>
+          <li><a href="#s7">보관 기간과 삭제 방법</a></li>
+          <li><a href="#s8">방침 변경과 문의</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="s1">1. 운영자와 적용 범위</h2>
+      <p>이 방침은 Chrome 확장 프로그램 <strong>NCP Console Plus</strong>(이하 "확장 프로그램")와 이 소개 사이트에 적용됩니다. 확장 프로그램은 개인이 개발·운영하는 비공식 프로그램이며 NAVER Cloud Corp.와 무관합니다. 확장 프로그램을 운영하는 별도의 서버는 없습니다.</p>
+
+      <h2 id="s2">2. 확장 프로그램이 저장하는 정보</h2>
+      <p>아래 정보만 브라우저의 확장 프로그램 저장소(<code>chrome.storage</code>)에 저장합니다. 모두 확장 프로그램의 동작을 위한 것이며, 개발자를 포함한 누구에게도 전송되지 않습니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>항목</th><th>내용</th><th>저장 위치</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>기능 설정값</td>
+              <td>"탭 이름 변경", "서버 접속 콘솔 추가 기능", "자동 연장", "20분 종료 예고"의 켜짐/꺼짐 값(참/거짓 4개)</td>
+              <td><code>chrome.storage.sync</code><br>Chrome 동기화를 켠 경우 사용자의 Google 계정을 통해 사용자의 다른 기기와 동기화됩니다. 동기화는 Google이 처리하며 개발자는 접근할 수 없습니다.</td>
+            </tr>
+            <tr>
+              <td>탭 제목 기록</td>
+              <td>방문한 콘솔 화면의 경로(URL의 경로 부분, 예: <code>/vpc-compute/server</code>)와 그 화면에 표시한 탭 제목. 최대 300개까지만 보관하며 넘치면 오래된 것부터 지웁니다. 화면 경로에 리소스 번호가 포함되는 경우 그 번호도 기록될 수 있습니다.</td>
+              <td><code>chrome.storage.local</code><br>이 기기의 이 브라우저 프로필에만 저장되며 동기화되지 않습니다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>탭 제목 기록은 화면을 다시 열 때 탭 이름이 깜빡이지 않도록 하는 용도로만 쓰입니다. 도메인과 쿼리 문자열(<code>?</code> 뒤)은 저장하지 않습니다.</p>
+
+      <h2 id="s3">3. 페이지에서 읽기만 하는 정보</h2>
+      <p>확장 프로그램은 기능을 제공하기 위해 지원 대상 콘솔 페이지에서 다음 정보를 <strong>화면에서 읽기만</strong> 하고, 저장하거나 전송하지 않습니다.</p>
+      <ul>
+        <li>콘솔 메뉴 이름과 서비스 이름(탭 제목 계산용), 현재 선택된 리전 아이콘(탭 아이콘용)</li>
+        <li>서버 접속 콘솔 창의 "남은 접속 시간", "전체 연결 시간" 표시와 "연장" 버튼(자동 연장과 종료 예고용)</li>
+        <li>서버 접속 콘솔 화면(iframe)의 위치와 크기(전체화면 전환용). 화면 안의 내용(서버 화면, 키보드 입력 등)은 읽지 않습니다.</li>
+      </ul>
+
+      <h2 id="s4">4. 수집하지 않는 정보</h2>
+      <ul>
+        <li>이름, 이메일, 연락처 등 개인 식별 정보</li>
+        <li>계정 아이디·비밀번호·인증 토큰·세션 키·쿠키</li>
+        <li>서버 이름, IP 주소, 인스턴스 정보 등 콘솔에 표시되는 리소스 정보</li>
+        <li>서버 접속 콘솔 화면의 내용과 키보드·마우스 입력</li>
+        <li>방문 기록(탭 제목 기록 외), 검색어, 위치 정보, 결제 정보</li>
+        <li>사용 통계, 오류 보고서, 광고 식별자</li>
+      </ul>
+
+      <h2 id="s5">5. 외부 전송과 제3자 제공</h2>
+      <ul>
+        <li>확장 프로그램은 어떤 외부 서버로도 데이터를 보내지 않습니다. 네트워크 요청(<code>fetch</code> 등)을 하지 않습니다.</li>
+        <li>원격에서 코드를 내려받아 실행하지 않습니다. 모든 코드는 확장 프로그램 패키지에 포함되어 있습니다.</li>
+        <li>분석·광고·추적 도구와 제3자 SDK를 사용하지 않습니다.</li>
+        <li>따라서 개인정보를 제3자에게 제공·위탁·판매하지 않습니다.</li>
+      </ul>
+      <p>참고: 자동 연장은 콘솔 화면의 "연장" 버튼을 사용자 대신 누르는 방식입니다. 이때 콘솔 페이지가 NAVER Cloud 서버로 보내는 요청은 사용자가 직접 "연장"을 누를 때와 같은 콘솔 자체의 동작이며, 확장 프로그램이 따로 보내는 데이터가 아닙니다.</p>
+      <p>이 소개 사이트도 쿠키, 방문자 분석, 외부 글꼴·스크립트를 사용하지 않습니다. 사이트는 GitHub Pages에서 제공되며, 접속 기록은 GitHub의 정책에 따라 GitHub가 처리할 수 있습니다.</p>
+
+      <h2 id="s6">6. 요청하는 권한과 사용 목적</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>권한</th><th>사용 목적</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><code>storage</code></td>
+              <td>기능 켜짐/꺼짐 설정과 탭 제목 기록을 저장합니다.</td>
+            </tr>
+            <tr>
+              <td>사이트 접근<br><code>https://*.ncloud.com/*</code><br><code>https://console.fin-ncloud.com/*</code><br><code>https://console.gov-ncloud.com/*</code></td>
+              <td>네이버 클라우드 콘솔(민간·금융·공공) 페이지에서만 탭 제목·아이콘 변경, 서버 접속 콘솔 전체화면 버튼, 자동 연장, 종료 예고를 실행합니다. 이 외의 사이트에는 접근하지 않습니다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>탭(<code>tabs</code>), 방문 기록(<code>history</code>), 쿠키(<code>cookies</code>), 웹 요청(<code>webRequest</code>) 등 다른 권한은 요청하지 않습니다.</p>
+
+      <h2 id="s7">7. 보관 기간과 삭제 방법</h2>
+      <ul>
+        <li>저장된 정보는 확장 프로그램을 삭제하면 함께 삭제됩니다. (동기화된 설정은 Chrome이 사용자의 계정 동기화 데이터에서 정리합니다.)</li>
+        <li>탭 제목 기록만 지우는 별도 메뉴는 없습니다. 지우려면 <code>chrome://extensions</code>에서 확장 프로그램을 제거한 뒤 다시 설치해 주세요.</li>
+        <li>기능은 확장 프로그램 아이콘의 팝업에서 언제든 끌 수 있습니다. "탭 이름 변경"을 끄면 새 탭 제목은 더 이상 기록되지 않습니다. (이미 저장된 기록은 그대로 남습니다.)</li>
+      </ul>
+
+      <h2 id="s8">8. 방침 변경과 문의</h2>
+      <p>방침이 바뀌면 이 페이지의 시행일과 내용을 갱신하고, 중요한 변경은 확장 프로그램 업데이트 설명에도 안내합니다. 개인정보와 관련한 문의는 <a data-gh="issues" href="https://github.com/mungi/ncp-console-plus/issues" rel="noopener">GitHub 이슈</a>로 남겨 주세요. 민감한 정보(계정 정보 등)는 이슈에 적지 마세요.</p>
+
+      <section class="lang-en" id="english" lang="en">
+        <h1>Privacy Policy (English)</h1>
+        <p class="meta">NCP Console Plus · Effective 2026-11-09</p>
+
+        <div class="callout">
+          <p><strong>In short:</strong> NCP Console Plus does not collect personal data, does not send any data to external servers, and uses no ads, analytics or trackers. Settings and a tab-title history stay in your own browser.</p>
+        </div>
+
+        <h2>1. Who we are</h2>
+        <p>This policy covers the Chrome extension <strong>NCP Console Plus</strong> and this website. The extension is an unofficial, independently developed tool and is not affiliated with NAVER Cloud Corp. There is no backend server operated for the extension.</p>
+
+        <h2>2. Data stored by the extension</h2>
+        <ul>
+          <li><strong>Feature settings</strong> (four on/off values) in <code>chrome.storage.sync</code>. If Chrome Sync is enabled, Google syncs them across your own devices; the developer has no access.</li>
+          <li><strong>Tab-title history</strong> in <code>chrome.storage.local</code>: the URL path of console screens you visited (no domain, no query string) and the tab title shown for it, up to 300 entries. It is used only to avoid tab-title flicker when you revisit a screen. If a console path contains a resource number, that number may be included. This data is never synced or transmitted.</li>
+        </ul>
+
+        <h2>3. Page content that is read but not stored</h2>
+        <p>On supported console pages the extension reads, without storing or transmitting it: menu and service names and the selected region icon (for tab title and icon), the "remaining time"/"total connection time" text and the "Extend" button of the server console dialog (for auto-extend and the end-of-session notice), and the position/size of the server console frame (for fullscreen). It does not read the contents of the remote server screen or your keyboard input.</p>
+
+        <h2>4. Data we do not collect</h2>
+        <p>Personal identifiers, account IDs and passwords, tokens, session keys and cookies, resource information shown in the console (server names, IP addresses), remote-screen content and input, browsing history, search terms, location, payment data, usage statistics, crash reports and advertising IDs.</p>
+
+        <h2>5. Sharing and remote code</h2>
+        <p>The extension makes no network requests, loads no remote code, and includes no third-party SDKs. (Auto-extend simply clicks the console's own "Extend" button, so the request that follows is the console's normal behavior, identical to clicking it yourself.) Nothing is shared with, sold to, or processed by third parties. This website sets no cookies and uses no analytics or external fonts/scripts; it is hosted on GitHub Pages, which may log access under GitHub's own policies.</p>
+
+        <h2>6. Permissions</h2>
+        <ul>
+          <li><code>storage</code>: save the settings and tab-title history described above.</li>
+          <li>Site access to <code>https://*.ncloud.com/*</code>, <code>https://console.fin-ncloud.com/*</code> and <code>https://console.gov-ncloud.com/*</code>: run the features only on NAVER Cloud Platform console pages. No other sites are accessed.</li>
+        </ul>
+
+        <h2>7. Retention and deletion</h2>
+        <p>Stored data is removed when you uninstall the extension. You can turn each feature off at any time from the extension popup; there is no separate option to clear only the tab-title history, so uninstall and reinstall the extension to remove it.</p>
+
+        <h2>8. Changes and contact</h2>
+        <p>If this policy changes, the effective date above is updated. Contact: <a data-gh="issues" href="https://github.com/mungi/ncp-console-plus/issues" rel="noopener">GitHub Issues</a>. Please do not post sensitive information in issues.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="links">
+        <a href="./">소개</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용 안내·면책</a>
+        <a href="support.html">지원</a>
+        <a data-gh="repo" href="https://github.com/mungi/ncp-console-plus" rel="noopener">GitHub</a>
+      </div>
+      <p>NCP Console Plus는 비공식 확장 프로그램이며 NAVER Cloud Corp.와 제휴·후원·보증 관계가 없습니다.</p>
+      <p>NAVER, Ncloud, NAVER Cloud Platform은 각 권리자의 상표입니다.</p>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
