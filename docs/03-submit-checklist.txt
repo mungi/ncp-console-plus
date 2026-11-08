@@ -11,7 +11,8 @@ Chrome 웹 스토어 제출 체크리스트
 
 3. 패키지
 [ ] manifest.json 의 version 확인 (현재 0.1.0, 업로드마다 올림)
-[ ] 프로젝트 폴더에서: tar -a -c -f ncp-console-plus-0.1.0.zip -C extention manifest.json popup.html js images
+[ ] 프로젝트 폴더에서 (release 폴더가 없으면 먼저 mkdir release):
+    tar -a -c -f release/ncp-console-plus-v0.1.0.zip -C extention manifest.json popup.html js images
 [ ] 압축 푼 폴더를 chrome://extensions 에서 로드해 시험
 
 4. 이미지 (docs 폴더, 모두 준비됨)
