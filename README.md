@@ -12,11 +12,16 @@ Naver Cloud Console의 **서버 접속 콘솔(VNC)** 을 전체 화면으로 보
 
 ## 설치 방법
 
-1. Chrome 브라우저에서 `chrome://extensions/` 주소로 이동합니다.
-2. 오른쪽 상단의 "개발자 모드"를 활성화합니다.
-3. "압축해제된 확장 프로그램을 로드합니다." 버튼을 클릭합니다.
-4. 이 확장 프로그램 폴더(`extention`, `manifest.json`이 있는 폴더)를 선택합니다.
-5. 이미 열려 있던 콘솔 탭은 새로고침해야 확장이 적용됩니다.
+**Chrome 웹 스토어**: [NCP Console Plus 설치하기](https://chromewebstore.google.com/detail/ncp-console-plus/feihhbhdncjijkbjfjgajdofdmajfbee) (업데이트가 자동으로 적용됩니다)
+
+### 직접 설치 (ZIP)
+
+1. [릴리즈](https://github.com/mungi/ncp-console-plus/releases)에서 최신 `ncp-console-plus-v*.zip`을 내려받아 압축을 풉니다. (압축을 푼 폴더에 `manifest.json`이 있습니다)
+2. Chrome 브라우저에서 `chrome://extensions/` 주소로 이동하고 오른쪽 상단의 "개발자 모드"를 활성화합니다.
+3. "압축해제된 확장 프로그램을 로드합니다." 버튼을 클릭하고 압축을 푼 폴더를 선택합니다.
+4. 이미 열려 있던 콘솔 탭은 새로고침해야 확장이 적용됩니다.
+
+저장소를 직접 내려받았다면 `extention` 폴더가 확장 프로그램 폴더입니다.
 
 ## 사용 방법
 

@@ -31,5 +31,5 @@ Chrome 웹 스토어 제출 체크리스트
 - 설명에 키워드를 나열하지 말 것
 
 7. 게시 후
-[ ] 스토어 주소를 site/index.html 설치 영역과 README 에 추가
+[x] 스토어 주소를 site/index.html 설치 영역과 README 에 추가 (완료)
 [ ] 업데이트: version 올리고 zip 만들어 [패키지] 탭에서 업로드
