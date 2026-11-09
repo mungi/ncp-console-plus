@@ -4,7 +4,7 @@ Naver Cloud Console의 **서버 접속 콘솔(VNC)** 을 전체 화면으로 보
 
 ## 지원 콘솔
 
-- 민간 클라우드: `*.ncloud.com` (`console.ncloud.com` 등. Neuro처럼 서비스에 따라 콘솔 서브도메인이 달라지는 경우 포함)
+- 민간 클라우드: `console.ncloud.com`
 - 금융 클라우드: `console.fin-ncloud.com`
 - 공공 클라우드: `console.gov-ncloud.com`
 
